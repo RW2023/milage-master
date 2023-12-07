@@ -1,5 +1,6 @@
+//src/app/page.tsx
 import OdometerForm from '@/components/OdemeterForm'
-import Image from 'next/image'
+
 
 export default function Home() {
   return (
