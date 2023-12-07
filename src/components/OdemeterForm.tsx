@@ -20,12 +20,12 @@ const OdometerForm = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 md:w-3/4 lg:w-1/2">
       <Heading title="Odometer Tracking" iconClass="fas fa-tachometer-alt" />
 
       {/* Start Reading Form */}
       <div className="card bg-base-100 shadow-xl mb-6">
-        <div className="card-body">
+        <div className="card-body border">
           <SubHeading
             title="Enter Start Reading"
             iconClass="fas fa-pencil-alt"
@@ -54,7 +54,7 @@ const OdometerForm = () => {
 
       {/* End Reading Form */}
       <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
+        <div className="card-body border">
           <SubHeading title="Enter End Reading" iconClass="fas fa-pencil-alt" />
           <form onSubmit={handleEndSubmit} className="flex flex-col gap-4">
             <div className="form-control">
