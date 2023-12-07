@@ -1,4 +1,5 @@
 'use client';
+import Heading from '@/components/ui/Heading';
 import React from 'react';
 
 export default function About() {
@@ -6,9 +7,7 @@ export default function About() {
     <div className="bg-base-200 min-h-screen">
       <div className="container mx-auto p-6">
         {/* Main Heading */}
-        <h1 className="text-5xl font-bold text-center mb-6">
-          About Mileage Master
-        </h1>
+       <Heading title="About Mile Master" iconClass="fas fa-info-circle" />
 
         {/* Introduction Section */}
         <div className="card bg-base-100 shadow-xl mb-4">
