@@ -8,7 +8,24 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === 'POST') {
     try {
-      const newReading = new Reading(req.body);
+      const { startReading, endReading, startReadingTime, endReadingTime } =
+        req.body;
+
+      // Validate reading times
+      if (new Date(endReadingTime) <= new Date(startReadingTime)) {
+        return res
+          .status(400)
+          .json({
+            error: 'End reading time must be after start reading time.',
+          });
+      }
+
+      const newReading = new Reading({
+        startReading,
+        endReading,
+        startReadingTime,
+        endReadingTime,
+      });
       const savedReading = await newReading.save();
 
       res.setHeader('Content-Type', 'application/json');
