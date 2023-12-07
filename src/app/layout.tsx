@@ -19,16 +19,10 @@ const RootLayout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en" data-theme="corporate">
       <Head>
-        {/* <meta
-          property="og:image"
-          content="https://next-quotes-pied.vercel.app/og.png"
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content="Quotes from African American Thought Leaders"
-        /> */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
       </Head>
