@@ -1,3 +1,38 @@
+# Mileage Master
+
+Mileage Master is a simple and efficient web application designed for truck drivers to easily record hub odometer readings without the need for pen and paper. The app allows for recording both start and end readings of trips and calculates the total distance covered, particularly useful for drivers pulling trailers.
+
+## Features
+
+- **Odometer Readings Input**: Enter start and end odometer readings separately.
+- **Distance Calculation**: Automatically calculates the distance covered during a trip.
+- **Data Storage**: Records and stores odometer readings over time.
+- **Data Analysis**: Provides insights on total miles driven, aiding in tracking and analysis.
+- **User-Friendly Interface**: Simple and intuitive UI, tailored for ease of use on the go.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+What things you need to install the software:
+
+- Node.js
+- npm or yarn
+- Git
+
+### Installing
+
+⬇️
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/mileage-master.git
+   cd mileage-master
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
