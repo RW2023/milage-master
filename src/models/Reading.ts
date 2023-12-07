@@ -1,3 +1,4 @@
+// src/models/Reading.ts
 import mongoose, { Document, Schema } from 'mongoose';
 
 interface IReading extends Document {
