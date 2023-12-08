@@ -10,10 +10,10 @@ interface IReading extends Document {
 }
 
 const readingSchema = new Schema<IReading>({
-  startReading: { type: Number, required: true },
-  endReading: { type: Number, required: true },
-  startReadingTime: { type: Date, required: true },
-  endReadingTime: { type: Date, required: true },
+  startReading: { type: Number, required: false }, // Changed to not required
+  endReading: { type: Number, required: false },
+  startReadingTime: { type: Date, required: false },
+  endReadingTime: { type: Date, required: false },
   distance: Number,
 });
 
