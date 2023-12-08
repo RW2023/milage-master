@@ -1,4 +1,4 @@
-// addReading.ts
+// src/pages/api/addReading.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import dbConnect from '@/lib/mongodb';
 import Reading from '@/models/Reading';
@@ -10,22 +10,42 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       const { startReading, endReading, startReadingTime, endReadingTime } =
         req.body;
+      let readingData: any = {};
 
-      // Validate reading times
-      if (new Date(endReadingTime) <= new Date(startReadingTime)) {
-        return res
-          .status(400)
-          .json({
-            error: 'End reading time must be after start reading time.',
-          });
+      // Add startReading and startReadingTime if provided
+      if (startReading !== undefined) {
+        readingData.startReading = startReading;
+        readingData.startReadingTime = startReadingTime
+          ? new Date(startReadingTime)
+          : undefined;
       }
 
-      const newReading = new Reading({
-        startReading,
-        endReading,
-        startReadingTime,
-        endReadingTime,
-      });
+      // Add endReading and endReadingTime if provided
+      if (endReading !== undefined) {
+        readingData.endReading = endReading;
+        readingData.endReadingTime = endReadingTime
+          ? new Date(endReadingTime)
+          : undefined;
+      }
+
+      // Calculate distance if both startReading and endReading are provided
+      if (
+        readingData.startReading !== undefined &&
+        readingData.endReading !== undefined
+      ) {
+        readingData.distance =
+          readingData.endReading - readingData.startReading;
+      }
+
+      // Check if at least start or end reading data is provided
+      if (
+        readingData.startReading === undefined &&
+        readingData.endReading === undefined
+      ) {
+        return res.status(400).json({ error: 'No reading data provided.' });
+      }
+
+      const newReading = new Reading(readingData);
       const savedReading = await newReading.save();
 
       res.setHeader('Content-Type', 'application/json');
