@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
-import Head from 'next/head';
+
 
 interface Metadata {
   title: string;
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 const RootLayout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en" data-theme="corporate">
-      <Head>
+     <head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-      </Head>
+      </head>
       <body className="mt-5">
         <Navbar />
         {children}
