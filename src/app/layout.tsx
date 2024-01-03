@@ -26,7 +26,7 @@ const RootLayout: NextPage<{ children: React.ReactNode }> = ({ children }) => {
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
       </head>
-      <body className="mt-5">
+      <body>
         <Navbar />
         {children}
       </body>
