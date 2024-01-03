@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Heading from '@/components/ui/Heading';
+import SubHeading from '@/components/ui/Heading';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +25,7 @@ const Navbar = () => {
             className="font-semibold text-xl tracking-tight cursor-pointer"
           >
             <div>
-              <Heading title="mile master" />
-            </div>
+              <SubHeading title="mile master" iconClass='fas fa-road'/>            </div>
           </span>
         </Link>
       </div>
